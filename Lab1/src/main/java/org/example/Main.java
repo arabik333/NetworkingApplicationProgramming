@@ -36,16 +36,31 @@ public class Main {
                     }
                 }
                 case 3 -> {
-                    System.out.println("Choose student");
-                    Student student = group.chooseStudent();
-                    System.out.println("Choose subject");
-                    Subject subject = Student.chooseAvailableSubject();
-                    System.out.println("Average grade in " + subject.getName() + " " + student.getSubjectAverageGrade(subject));
+                    if (!group.isEmpty()) {
+                        System.out.println("Choose student");
+                        Student student = group.chooseStudent();
+                        if (student.isEmpty()) {
+                            System.out.println("You have no any subject");
+                            break;
+                        }
+                        System.out.println("Choose subject");
+                        Subject subject = Student.chooseAvailableSubject();
+                        System.out.println("Average grade in " + subject.getName() + " " + student.getSubjectAverageGrade(subject));
+                        break;
+                    }
+                    System.out.println("You have no any user");
                 }
                 case 4 -> {
-                    System.out.println("Choose student");
-                    Student student = group.chooseStudent();
-                    System.out.println(student.getName() + "'s overall GPA is " + student.getTotalGrade());
+                    if (!group.isEmpty()) {
+                        System.out.println("Choose student");
+                        Student student = group.chooseStudent();
+                        if (student.isEmpty()) {
+                            System.out.println("You have no any subject");
+                            break;
+                        }
+                        System.out.println(student.getName() + "'s overall GPA is " + student.getTotalGrade());
+                    }
+                    System.out.println("You have no any user");
                 }
                 case 5 -> {
                     return;
@@ -55,3 +70,4 @@ public class Main {
         }
     }
 }
+

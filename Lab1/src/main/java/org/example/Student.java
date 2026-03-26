@@ -56,4 +56,8 @@ public class Student implements Nameable {
         logger.info("Average grade is {}", (float) averageGrade / count);
         return (float) averageGrade / count;
     }
+
+    public boolean isEmpty() {
+        return grades.isEmpty();
+    }
 }

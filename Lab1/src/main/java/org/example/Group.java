@@ -21,4 +21,8 @@ public class Group {
         logger.info("Logged in under {}'s profile", student.getName());
         return student;
     }
+
+    public boolean isEmpty() {
+        return students.isEmpty();
+    }
 }

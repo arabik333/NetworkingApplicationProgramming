@@ -3,7 +3,6 @@ package org.example;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScannerManager {
@@ -19,8 +18,8 @@ public class ScannerManager {
             try {
                 String value = scanner.nextLine();
                 return Integer.parseInt(value);
-            } catch (InputMismatchException e) {
-                logger.error("User is out of range");
+            } catch (NumberFormatException e) {
+                logger.warn("User is out of range");
                 System.out.println("Invalid input");
             }
         }
